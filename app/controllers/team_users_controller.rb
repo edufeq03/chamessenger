@@ -7,8 +7,10 @@ class TeamUsersController < ApplicationController
 
     respond_to do |format|
       if @team_user.save
+        format.html {}
         format.json { render :show, status: :created }
       else
+        format.html {}
         format.json { render json: @team_user.errors, status: :unprocessable_entity }
       end
     end
